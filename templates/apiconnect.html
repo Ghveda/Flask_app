@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Add page {%endblock%}
+
+{% block content %}
+<div class="container">
+    <div class="minibox" style="margin-left: 30%; margin-top: 10%; width: 500px;">
+        <form method="post">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Write a text</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="search_api">
+                      {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% for cat, msg in messages %}
+                            <p class="{{ cat }}">{{ msg }}</p>
+                        {% endfor %}
+                    {% endwith %}
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+  <div style="width: 1200px; border: 2px solid gray; margin-top: 20px;" class="row align-items-center">
+    <p>{{data}}</p>
+  </div>
+</div>
+{%endblock%}

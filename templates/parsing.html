@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+  <table class="table" style="margin-top: 5%; margin-left: 15%; width: 1200px;">
+    <thead style="width: 1200px;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
+    {% for i in data %}
+    <form>
+      <tbody>
+        <tr>
+          <th scope="row"><h2>.</h2></th>
+          <td>{{ i }}</td>
+           <td></td>
+        </tr>
+      </tbody>
+    </form>
+    {% endfor %}
+  </table>
+{%endblock%}
