@@ -68,7 +68,7 @@ def login():
             session['username'] = request.form['username']
             return redirect(url_for('home'))
         else:
-            return '<h1>something is wrong</h1>'
+            flash('incorrect', 'error')
     return render_template('Login.html')
 
 
